@@ -11,8 +11,10 @@ export function getTextFromHtmlParagraph(htmlParagraph: HTMLParagraph): string {
 }
 
 export function getSentencesFromParagraph(paragraph: string): string[] {
+  const punctuationRegex = /[!?.]/;
+
   return paragraph
-    .split(".")
+    .split(punctuationRegex)
     .filter((s) => s !== "")
     .map((s) => s.trim());
 }

@@ -15,7 +15,7 @@ describe("getTextFromHtmlParagraph", () => {
 
 describe("getSentencesFromParagraph", () => {
   it("returns an array of sentences from a string of paragraph text", () => {
-    const paragraph = "Hello world. The quick brown fox. The end.";
+    const paragraph = "Hello world. The quick brown fox? The end!";
     const sentences = getSentencesFromParagraph(paragraph);
 
     expect(sentences.length).toEqual(3);
