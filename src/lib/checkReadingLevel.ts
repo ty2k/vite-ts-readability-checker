@@ -9,3 +9,10 @@ export function getTextFromHtmlParagraph(htmlParagraph: HTMLParagraph): string {
 
   return arr.length > 0 ? arr[0] : "";
 }
+
+export function getSentencesFromParagraph(paragraph: string): string[] {
+  return paragraph
+    .split(".")
+    .filter((s) => s !== "")
+    .map((s) => s.trim());
+}
