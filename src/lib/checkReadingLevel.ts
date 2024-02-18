@@ -102,3 +102,11 @@ export function getReadingLevelDataFromParagraph(
     sentences: sentencesData,
   };
 }
+
+export function getReadingLevelDataFromHtmlParagraph(
+  htmlParagraph: HTMLParagraph
+): ReadingLevel {
+  return getReadingLevelDataFromParagraph(
+    getTextFromHtmlParagraph(htmlParagraph)
+  );
+}
