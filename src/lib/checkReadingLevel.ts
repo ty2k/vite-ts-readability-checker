@@ -3,7 +3,7 @@ import { syllable } from "syllable";
 
 import { readingEaseLevels, ReadingEase } from "./readingEaseLevels";
 
-type HTMLParagraph = `<p>${string}</p>`;
+export type HTMLParagraph = `<p>${string}</p>`;
 
 export function getTextFromHtmlParagraph(htmlParagraph: HTMLParagraph): string {
   const paragraphRegex = /<p\b[^>]*>(.*?)<\/p>/;
@@ -31,7 +31,7 @@ interface SentenceData {
   syllables: number;
 }
 
-interface ReadingLevel {
+export interface ReadingLevel {
   readingEase: string;
   readingEaseSchoolLevel: ReadingEase | undefined;
   readingGrade: string;
