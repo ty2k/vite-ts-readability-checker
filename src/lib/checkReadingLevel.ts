@@ -34,6 +34,7 @@ interface SentenceData {
 export interface ReadingLevel {
   readingEase: string;
   readingEaseSchoolLevel: ReadingEase | undefined;
+  readingEaseIndex: number;
   readingGrade: string;
   characterCount: number;
   wordCount: number;
@@ -79,9 +80,13 @@ export function getReadingLevelDataFromParagraph(
   const readingEase = BigNumber(206.835)
     .minus(easeSentenceLengthScore)
     .minus(easeSyllableScore);
-  const readingEaseSchoolLevel = readingEaseLevels.find((level) =>
-    readingEase.isGreaterThanOrEqualTo(level.min)
-  );
+  let readingEaseIndex = -1;
+  const readingEaseSchoolLevel = readingEaseLevels.find((level, index) => {
+    if (readingEase.isGreaterThanOrEqualTo(level.min)) {
+      readingEaseIndex = index;
+      return true;
+    }
+  });
 
   // Flesch-Kincaid grade level
   const gradeSentenceLengthScore =
@@ -94,6 +99,7 @@ export function getReadingLevelDataFromParagraph(
   return {
     readingEase: readingEase.toFixed(2),
     readingEaseSchoolLevel,
+    readingEaseIndex,
     readingGrade: readingGrade.toFixed(2),
     characterCount,
     wordCount,
