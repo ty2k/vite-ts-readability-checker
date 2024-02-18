@@ -32,8 +32,7 @@ describe("getReadingLevelDataFromParagraph()", () => {
     const data = getReadingLevelDataFromParagraph(paragraph);
 
     expect(data.readingEase).toEqual("76.55");
-    expect(data.readingEaseSchoolLevel).haveOwnProperty("grade");
-    expect(data.readingEaseSchoolLevel?.grade).toEqual("8-9");
+    expect(data.readingEaseSchoolLevel?.grade).toEqual("7");
     expect(data.readingGrade).toEqual("3.41");
   });
 });

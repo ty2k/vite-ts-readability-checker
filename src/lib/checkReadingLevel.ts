@@ -80,7 +80,7 @@ export function getReadingLevelDataFromParagraph(
     .minus(easeSentenceLengthScore)
     .minus(easeSyllableScore);
   const readingEaseSchoolLevel = readingEaseLevels.find((level) =>
-    readingEase.isGreaterThanOrEqualTo(level.max)
+    readingEase.isGreaterThanOrEqualTo(level.min)
   );
 
   // Flesch-Kincaid grade level
