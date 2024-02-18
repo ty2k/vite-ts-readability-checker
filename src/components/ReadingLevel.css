@@ -1,6 +1,7 @@
-.reading-level {
+.reading-levels {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 20px;
   margin-top: 10px;
@@ -9,20 +10,63 @@
 .score-pill {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   align-items: center;
   gap: 8px;
-  background-color: pink;
-  border: 6px solid lightpink;
+  background-color: lightgrey;
+  border: 3px solid rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   padding: 8px;
-  width: 120px;
 }
 
 .score-pill > label {
   text-align: center;
 }
 
+/* ⓘ more information symbol */
+.score-pill > label > a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .score-pill > p {
   font-size: 24px;
   font-weight: bold;
+}
+
+/* 8 levels from 0 (green/good) to 7 (red/bad) */
+/* Dark text on light backgrounds */
+.level-0 {
+  background-color: #e5ffbd;
+  color: #2d2d2d;
+}
+.level-1 {
+  background-color: #c9ff77;
+  color: #2d2d2d;
+}
+.level-2 {
+  background-color: #ffea31;
+  color: #2d2d2d;
+}
+.level-3 {
+  background-color: #ffaf1b;
+  color: #2d2d2d;
+}
+
+/* Light text on dark backgrounds */
+.level-4 {
+  background-color: #b30000;
+  color: white;
+}
+.level-5 {
+  background-color: #970000;
+  color: white;
+}
+.level-6 {
+  background-color: #740000;
+  color: white;
+}
+.level-7 {
+  background-color: #4c0000;
+  color: white;
 }

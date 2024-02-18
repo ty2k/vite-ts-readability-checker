@@ -12,7 +12,7 @@ interface TipTapEditorProps {
   setText: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function TiptapEditor({
+export function TiptapEditor({
   content,
   setContent,
   setText,
@@ -32,5 +32,3 @@ function TiptapEditor({
     </div>
   );
 }
-
-export default TiptapEditor;

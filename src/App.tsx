@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
-import TiptapEditor from "./components/Editor";
-import { ReadingLevel } from "./components/ReadingLevel";
 import { getReadingLevelDataFromParagraph } from "./lib/checkReadingLevel";
+
+import { TiptapEditor } from "./components/Editor";
+import { ReadingLevel } from "./components/ReadingLevel";
+import { Instructions } from "./components/Instructions";
 
 import "./App.css";
 
@@ -18,7 +20,7 @@ function App() {
   }, [text]);
 
   return (
-    <div className="app-container">
+    <main className="app-container">
       <h1 className="serif">Flesch-Kincaid readability</h1>
       <p className="sans-serif">
         Add your paragraph text into the editor below to see your scores.
@@ -29,7 +31,8 @@ function App() {
         setText={setText}
       />
       <ReadingLevel data={readingLevel} />
-    </div>
+      <Instructions />
+    </main>
   );
 }
 
