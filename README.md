@@ -2,6 +2,8 @@
 
 Demo to show Tiptap editor with Flesch readability score information.
 
+![Screenshot of the running application](./screenshot.png)
+
 ---
 
 # React + TypeScript + Vite
