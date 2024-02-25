@@ -17,17 +17,19 @@ export function Instructions() {
             <th>Note</th>
           </tr>
         </thead>
-        {readingEaseLevels.map((level, index) => {
-          return (
-            <tr key={index} className={`level-${index}`}>
-              <td width="15%">
-                {level.max} - {level.min}
-              </td>
-              <td width="20%">{level.grade}</td>
-              <td width="65%">{level.note}</td>
-            </tr>
-          );
-        })}
+        <tbody>
+          {readingEaseLevels.map((level, index) => {
+            return (
+              <tr key={index} className={`level-${index}`}>
+                <td width="15%">
+                  {level.max} - {level.min}
+                </td>
+                <td width="20%">{level.grade}</td>
+                <td width="65%">{level.note}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
