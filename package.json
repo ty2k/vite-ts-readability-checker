@@ -1,5 +1,5 @@
 {
-  "name": "ts-readability-checker",
+  "name": "vite-ts-readability-checker",
   "version": "0.0.1",
   "author": "Tyler Krys <tylerkrys@gmail.com>",
   "type": "module",
